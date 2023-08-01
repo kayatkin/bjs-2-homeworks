@@ -29,10 +29,20 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   const creditBody = amount - contribution;
 
   const monthlyPayment = creditBody * (monthlyPercent + (monthlyPercent 
-      / (((1 + monthlyPercent) ** countMonths) - 1)));
+      / ((1 + monthlyPercent) ** countMonths - 1)));
 
-  const totalAmount = monthlyPayment * countMonths + contribution;
+
+  const totalAmount = monthlyPayment * countMonths;
 
   return Number(totalAmount.toFixed(2));
 
 }
+
+console.log(calculateTotalMortgage(10, 0, 50000, 12)); // Вывод: 52749.53
+console.log(calculateTotalMortgage(10, 1000, 50000, 12)); // Вывод: 51694.54
+console.log(calculateTotalMortgage(10, 0, 20000, 24)); // Вывод: 22149.56
+console.log(calculateTotalMortgage(10, 1000, 20000, 24)); // Вывод: 21042.09
+console.log(calculateTotalMortgage(10, 20000, 20000, 24)); // Вывод: 0
+console.log(calculateTotalMortgage(10, 0, 10000, 36)); // Вывод: 11616.19
+console.log(calculateTotalMortgage(15, 0, 10000, 36)); // Вывод: 12479.52
+
