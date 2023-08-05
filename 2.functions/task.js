@@ -54,11 +54,11 @@ function differenceEvenOddWorker(...arr) {
   let sumEvenElement = 0;
   let sumOddElement = 0;
 
-  for (const num of arr) {
-    if (num % 2 === 0) {
-      sumEvenElement += num;
+  for (let element of arr) {
+    if (element % 2 === 0) {
+      sumEvenElement += element;
     } else {
-      sumOddElement += num;
+      sumOddElement += element;
     }
   }
 
