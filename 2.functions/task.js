@@ -74,9 +74,9 @@ function averageEvenElementsWorker(...arr) {
   let sumEvenElement = 0;
   let countEvenElement = 0;
 
-  for (const num of arr) {
-    if (num % 2 === 0) {
-      sumEvenElement += num;
+  for (let element of arr) {
+    if (element % 2 === 0) {
+      sumEvenElement += element;
       countEvenElement += 1;
     }
   }
